@@ -16,11 +16,27 @@ const Header = () => {
 			<div className={s.header}>
 				<div className='container mx-auto'>
 					<div className={s.header_items}>
-						<img className='cursor-pointer' onClick={() => navigate('/')} src={logo} alt='' />
+						<img
+							className='cursor-pointer'
+							onClick={() => navigate('/')}
+							src={logo}
+							alt=''
+						/>
 						<nav>
-							<NavLink to='catalog'
-											 onMouseEnter={() => setCatalogListVisible(true)}>Продукты<KeyboardArrowDownIcon /></NavLink>
-							<NavLink to='solutions'>Решения</NavLink>
+							<NavLink
+								to='catalog'
+								onMouseEnter={() => setCatalogListVisible(true)}
+								onClick={() => setCatalogListVisible(false)}
+							>
+								Продукты
+								<KeyboardArrowDownIcon />
+							</NavLink>
+							<NavLink
+								to='solutions'
+								onClick={() => setCatalogListVisible(false)}
+							>
+								Решения для маркировки
+							</NavLink>
 							<NavLink to='contacts'>Контакты</NavLink>
 						</nav>
 					</div>
@@ -30,9 +46,12 @@ const Header = () => {
 					timeout={450}
 					classNames={{
 						enterActive: s.citiesEnterActive,
-						exitActive: s.citiesExitActive,
-					}} mountOnEnter unmountOnExit>
-					<CatalogList setCatalogListVisible={setCatalogListVisible}/>
+						exitActive: s.citiesExitActive
+					}}
+					mountOnEnter
+					unmountOnExit
+				>
+					<CatalogList setCatalogListVisible={setCatalogListVisible} />
 				</CSSTransition>
 			</div>
 		</>
