@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './HomePage.module.scss'
+import BrandsCarousel from '../../components/BrandsCarousel/BrandsCarousel'
 
 const HomePage = () => {
 	return (
@@ -24,6 +25,7 @@ const HomePage = () => {
 					</div>
 				</div>
 			</section>
+			<BrandsCarousel />
 		</div>
 	)
 }
