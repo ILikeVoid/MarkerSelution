@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import s from './CatalogList.module.scss'
-import { Items } from '../../assets/data/data'
+import { Items } from '../../assets/data/categoriesData'
 
 type IProps = {
 	setCatalogListVisible: Function

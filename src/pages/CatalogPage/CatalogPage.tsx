@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './CatalogPage.module.scss'
-import { Items } from '../../assets/data/data'
+import { Items } from '../../assets/data/categoriesData'
 import { NavLink } from 'react-router-dom'
 
 const CatalogPage = () => {

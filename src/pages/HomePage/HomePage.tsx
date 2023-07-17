@@ -15,13 +15,18 @@ const HomePage = () => {
 				></video>
 				<div className={s.title_items}>
 					<div className='container mx-auto'>
-					<h1>INDUSTRIELLE<br/> KENNZEICHNUNG</h1>
-					<p>
-						Markiertechnologie & Erkennungssysteme aus einer Hand ✓<br/> Ihr
-						Spezialist zur permanenten Kennzeichnung von Werkstoffen, Bauteilen,<br/>
-						Werkzeugen, Messmitteln und mehr.
-					</p>
-					<button>Mehr erfahren</button>
+						<h1>
+							INDUSTRIELLE
+							<br /> KENNZEICHNUNG
+						</h1>
+						<p>
+							Markiertechnologie & Erkennungssysteme aus einer Hand ✓<br /> Ihr
+							Spezialist zur permanenten Kennzeichnung von Werkstoffen,
+							Bauteilen,
+							<br />
+							Werkzeugen, Messmitteln und mehr.
+						</p>
+						<button>Mehr erfahren</button>
 					</div>
 				</div>
 			</section>
