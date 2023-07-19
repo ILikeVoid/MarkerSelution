@@ -4,9 +4,13 @@
   position: sticky;
   width: 100%;
   box-shadow: gray 0 1px 10px;
-  top:0;
-  z-index: 999;
+  top: 0;
+  z-index: 2;
   background: white;
+
+  .burger_menu {
+    display: none;
+  }
 
   .header_items {
     display: flex;
@@ -63,5 +67,37 @@
   100% {
     opacity: 0;
     transform: translateY(-20px);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .header {
+    .header_items {
+      img {
+        width: 200px;
+      }
+
+      nav {
+        a {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .header {
+    .burger_menu {
+      display: initial;
+    }
+
+    .header_items {
+      margin: 0 1.5%;
+
+      nav {
+        display: none;
+      }
+    }
   }
 }

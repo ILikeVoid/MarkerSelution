@@ -1,0 +1,21 @@
+.mobile_menu {
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  box-shadow: 0 3px 12px -4px rgb(0 0 0 / 90%);
+  overflow-y: auto;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      font-size: 26px;
+      color: black;
+    }
+  }
+}

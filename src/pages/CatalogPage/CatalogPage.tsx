@@ -9,13 +9,15 @@ const CatalogPage = () => {
 			<div className='container mx-auto'>
 				<h1>Каталог товаров</h1>
 				<div className={s.catalog_items}>
-					<nav>
-						{Items.map(item => (
-							<NavLink to='#' key={item.id}>
-								{item.name}
-							</NavLink>
-						))}
-					</nav>
+					<div>
+						<nav>
+							{Items.map(item => (
+								<NavLink to='#' key={item.id}>
+									{item.name}
+								</NavLink>
+							))}
+						</nav>
+					</div>
 					<div className={s.catalog_list}>
 						{Items.map(item => (
 							<div className={s.item} key={item.id}>

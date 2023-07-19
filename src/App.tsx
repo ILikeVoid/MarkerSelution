@@ -7,6 +7,7 @@ import SolutionsPage from './pages/SolutionsPage/SolutionsPage'
 import ContactsPage from './pages/ContactsPage/ContactsPage'
 import CatalogPage from './pages/CatalogPage/CatalogPage'
 import BrandDetails from './pages/BrandDetailsPage/BrandDetailsPage'
+import MobileMenu from './components/MobileMenu/MobileMenu'
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 				<Route path='/catalog' element={<CatalogPage />} />
 				<Route path='/brand/:brandId' element={<BrandDetails />} />
 			</Routes>
+			<MobileMenu />
 		</div>
 	)
 }

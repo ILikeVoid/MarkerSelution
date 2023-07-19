@@ -2,7 +2,8 @@
 export type IBrands = {
 	id: number
 	name: string
-	img: string
+	image: string
+	description?: string
 }
 
 //Categories types.

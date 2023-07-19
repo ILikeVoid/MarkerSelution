@@ -1,40 +1,62 @@
 import React from 'react'
 import s from './BrandsCarousel.module.scss'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import './slick.css'
+import './slick-theme.css'
 import Slider from 'react-slick'
-import { Brands } from '../../assets/data/brandsData'
 import { NavLink } from 'react-router-dom'
+import { useGetBrandsQuery } from '../../redux/sevices/features/brandsApi/brandsApi'
 
 const BrandsCarousel = () => {
+	const { data = [] } = useGetBrandsQuery()
+
 	const settings = {
-		className: s.gg,
 		infinite: true,
-		speed: 500,
-		slidesToShow: 4,
-		slidesToScroll: 1
+		speed: 1000,
+		slidesToShow: 6,
+		slidesToScroll: 6,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3,
+					infinite: true,
+				}
+			},
+			{
+				breakpoint: 706,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+					initialSlide: 2
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					dots: true
+				}
+			}
+		]
 	}
 
 	return (
-		<div className={s.carousel}>
+		<section className={s.carousel}>
 			<div className='container mx-auto'>
 				<h2>Производители</h2>
 				<Slider {...settings}>
-					{Brands.map(item => (
-							<NavLink to={`brand/${item.id}`}>
-								<div className={s.item} key={item.id}>
-									<div className={s.brand}>
-										<div className={s.img_block}>
-											<img src={item.img} alt='' />
-										</div>
-										<p>{item.name}</p>
-									</div>
-								</div>
-							</NavLink>
-					))}
+					{data?.map(brand =>
+						<NavLink to={`brand/${brand.id}`}>
+							<div className={s.brand_item}>
+								<img src={brand.image} alt='' />
+							</div>
+						</NavLink>
+					)}
 				</Slider>
 			</div>
-		</div>
+		</section>
 	)
 }
 
