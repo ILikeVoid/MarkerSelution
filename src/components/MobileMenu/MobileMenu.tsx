@@ -1,5 +1,5 @@
 import React from 'react'
-import s from '../Header/Header.module.scss'
+import s from './MobileMenu.module.scss'
 import { NavLink } from 'react-router-dom'
 
 const MobileMenu = () => {
