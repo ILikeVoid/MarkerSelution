@@ -14,6 +14,7 @@ const BrandsCarousel = () => {
 		speed: 1000,
 		slidesToShow: 6,
 		slidesToScroll: 6,
+		dots: false,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -21,6 +22,7 @@ const BrandsCarousel = () => {
 					slidesToShow: 3,
 					slidesToScroll: 3,
 					infinite: true,
+					dots: false,
 				}
 			},
 			{
@@ -28,7 +30,8 @@ const BrandsCarousel = () => {
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 2,
-					initialSlide: 2
+					initialSlide: 2,
+					dots: false
 				}
 			},
 			{
@@ -36,7 +39,7 @@ const BrandsCarousel = () => {
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1,
-					dots: true
+					dots: false
 				}
 			}
 		]
