@@ -21,15 +21,29 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: 20px;
+
+      .active {
+        background: #6589eb;
+        color: white;
+      }
+
+      .pending {
+        background: #6589eb;
+        color: white;
+      }
+
 
       a {
+        padding: 5px 10px;
+        border-radius: 10px;
         font-family: 'Cabin', sans-serif;
         font-size: 22px;
         transition: 0.3s all;
 
         &:hover {
-          color: gray;
+          background: #6589eb;
+          color: white;
         }
       }
     }

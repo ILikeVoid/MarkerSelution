@@ -7,6 +7,7 @@ import SolutionsPage from './pages/SolutionsPage/SolutionsPage'
 import ContactsPage from './pages/ContactsPage/ContactsPage'
 import CatalogPage from './pages/CatalogPage/CatalogPage'
 import BrandDetails from './pages/BrandDetailsPage/BrandDetailsPage'
+import Footer from './components/Footer/Footer'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 				<Route path='/catalog' element={<CatalogPage />} />
 				<Route path='/brand/:brandId' element={<BrandDetails />} />
 			</Routes>
+			<Footer />
 		</div>
 	)
 }

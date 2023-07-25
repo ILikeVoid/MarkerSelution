@@ -3,6 +3,7 @@ import { IBrands } from '../../core/types'
 import s from './BrandDetails.module.scss'
 
 const BrandDetails: FC<IBrands> = ({ id, name, image }) => {
+
 	return (
 		<div key={id} className={s.brand} >
 			<h1>{name}</h1>
