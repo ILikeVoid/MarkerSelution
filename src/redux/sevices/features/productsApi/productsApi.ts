@@ -3,10 +3,10 @@ import { IProducts } from '../../../../core/types'
 
 export const productsApi = createApi({
 	reducerPath: 'productsApi',
-	baseQuery: fetchBaseQuery({ baseUrl: 'http://195.49.210.12/api/' }),
+	baseQuery: fetchBaseQuery({ baseUrl: 'http://192.168.100.24/api/' }),
 	endpoints: build => ({
-		getProducts: build.query<IProducts[], void>({
-			query: () => `products/`
+		getProducts: build.query<IProducts[], number>({
+			query: (pageId) => `categories/?page=${pageId}`
 		})
 	})
 })

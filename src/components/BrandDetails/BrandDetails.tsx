@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { IBrands } from '../../core/types'
 import s from './BrandDetails.module.scss'
 
+
 const BrandDetails: FC<IBrands> = ({ id, name, image }) => {
 
 	return (

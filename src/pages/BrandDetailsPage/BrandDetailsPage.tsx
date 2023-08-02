@@ -1,30 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import s from './BrandDetailsPage.module.scss'
-import { IBrands } from '../../core/types'
+import { useGetBrandDetailsQuery } from '../../redux/sevices/features/brandsApi/brandsApi'
 import BrandDetails from '../../components/BrandDetails/BrandDetails'
-import { useGetBrandsQuery } from '../../redux/sevices/features/brandsApi/brandsApi'
 
 const BrandDetailsPage = () => {
-	const [brand, setBrand] = useState<IBrands[]>()
 
 	const { brandId } = useParams()
 
-	const { data = [] } = useGetBrandsQuery()
+	const { data } = useGetBrandDetailsQuery(Number(brandId))
 
-	useEffect(() => {
-		if (brandId) {
-			setBrand(data?.filter(brand => brand.id === Number(brandId)))
-		}
-	}, [brandId])
+	console.log(data)
+
 
 	return (
 		<div className={s.dd}>
 			<div className='container mx-auto'>
-				{brand &&
-					brand.map(item => (
-						<BrandDetails id={item.id} name={item.name} image={item.image} />
-					))}
+				{data ? <BrandDetails id={data.id} name={data.name} image={data.image} /> : <div>gg wop</div>}
 			</div>
 		</div>
 	)

@@ -3,13 +3,16 @@ import { IBrands } from '../../../../core/types'
 
 export const brandsApi = createApi({
 	reducerPath: 'brandsApi',
-	baseQuery: fetchBaseQuery({ baseUrl: 'http://195.49.210.12/api/' }),
+	baseQuery: fetchBaseQuery({ baseUrl: 'http://192.168.100.24/api/' }),
 	endpoints: build => ({
 		getBrands: build.query<IBrands[], void>({
 			query: () => `brands/`
+		}),
+		getBrandDetails: build.query<IBrands, number>({
+			query: (brandId) => `brands/${brandId}`
 		})
 	})
 })
 
 
-export const { useGetBrandsQuery } = brandsApi
+export const { useGetBrandsQuery, useGetBrandDetailsQuery } = brandsApi
