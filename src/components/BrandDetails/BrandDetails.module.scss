@@ -17,4 +17,55 @@
 
     }
   }
+
+  .brand_products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 2px solid #efeeee;
+
+
+    > div {
+      border-bottom: 2px #efeeee solid;
+    }
+
+    > div:last-child {
+      border-bottom: none;
+    }
+
+    .product {
+      padding: 20px 20px;
+      transition: 0.3s;
+
+      &:hover {
+        box-shadow: 0 0 20px silver;
+      }
+
+      .product_items {
+        display: flex;
+        flex-direction: column;
+
+        .image_block {
+          padding: 40px 40px;
+        }
+
+        span {
+          font-family: 'Fira Sans', sans-serif;
+        }
+
+        button {
+          margin-top: 20px;
+          background-color: gray;
+          color: white;
+          font-size: 20px;
+          padding: 5px 10px;
+          transition: 0.3s all;
+
+          &:hover {
+            background-color: #6589eb;
+          }
+        }
+      }
+    }
+  }
 }

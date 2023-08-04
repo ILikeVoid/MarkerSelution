@@ -1,0 +1,33 @@
+import productImg from '../images/lip-product.jpg'
+
+export const lipProducts = [
+	{ id: 1, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 2, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 3, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 4, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 5, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 6, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 7, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 8, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 9, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 10, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 11, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 12, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 13, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 14, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 15, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 16, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 17, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 18, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 19, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 20, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 22, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 23, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 24, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 25, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 26, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 27, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 28, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 29, image: productImg, name: 'Бампер безопасности CYNDAR 1622' },
+	{ id: 30, image: productImg, name: 'Бампер безопасности CYNDAR 1622' }
+]

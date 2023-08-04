@@ -5,11 +5,11 @@ export const productsApi = createApi({
 	reducerPath: 'productsApi',
 	baseQuery: fetchBaseQuery({ baseUrl: 'http://192.168.100.24/api/' }),
 	endpoints: build => ({
-		getProducts: build.query<IProducts[], number>({
-			query: (pageId) => `categories/?page=${pageId}`
+		getProduct: build.query<IProducts, number>({
+			query: (productId) => `products/${productId}`
 		})
 	})
 })
 
 
-export const { useGetProductsQuery } = productsApi
+export const { useGetProductQuery } = productsApi

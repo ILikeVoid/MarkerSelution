@@ -2,15 +2,9 @@ import React, { useEffect, useState } from 'react'
 import s from './CatalogPage.module.scss'
 import { Items } from '../../assets/data/categoriesData'
 import { NavLink } from 'react-router-dom'
-import { useGetProductsQuery } from '../../redux/sevices/features/productsApi/productsApi'
 
 const CatalogPage = () => {
 	const [currentPage, setCurrentPage] = useState(1);
-
-	const { data = [] } = useGetProductsQuery(currentPage)
-
-	console.log(data)
-	
 
 	return (
 		<div className={s.catalog}>
