@@ -8,10 +8,18 @@ export type IBrands = {
 
 //Categories types.
 export type ICategories = {
-	id: number
-	name: string
-	category: string
-	img: string
+	id?: number
+	title: string
+	slug?: string
+	image?: string
+	lft?: number
+	rght?: number
+	tree_id?: number
+	level?: number
+	parent: number | null
+	products?: Array<number>
+	children?: Array<number>
+
 }
 
 

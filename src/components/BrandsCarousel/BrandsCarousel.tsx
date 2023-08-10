@@ -51,7 +51,7 @@ const BrandsCarousel = () => {
 				<h2>Производители</h2>
 				<Slider {...settings}>
 					{data?.map(brand =>
-						<NavLink to={`brand/${brand.id}`}>
+						<NavLink to={`brand/${brand.id}`} key={brand.id}>
 							<div className={s.brand_item}>
 								<img src={brand.image} alt='' />
 							</div>

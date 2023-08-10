@@ -9,7 +9,7 @@ export const brandsApi = createApi({
 			query: () => `brands/`
 		}),
 		getBrandDetails: build.query<IBrands, number>({
-			query: (brandId) => `brands/${brandId}`
+			query: (brandId) => `brands/${brandId}/`
 		})
 	})
 })

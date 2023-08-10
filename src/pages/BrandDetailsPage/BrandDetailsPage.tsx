@@ -10,12 +10,13 @@ const BrandDetailsPage = () => {
 
 	const { data } = useGetBrandDetailsQuery(Number(brandId))
 
+	console.log(data)
 
 	return (
 		<div className={s.dd}>
 			<div className='container mx-auto'>
-				{/*{data ? <BrandDetails id={data.id} name={data.name} image={data.image} /> : <div></div>}*/}
-				<BrandDetails id={1} name="Baumer" image={brandImage} />
+				{data && <BrandDetails id={data.id} name={data.name} image={data.image} />}
+				{/*<BrandDetails id={1} name="Baumer" image={brandImage} />*/}
 			</div>
 		</div>
 	)

@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import s from './Footer.module.scss'
-import { Items as catalog } from '../../assets/data/categoriesData'
 import { NavLink } from 'react-router-dom'
 import { useGetBrandsQuery } from '../../redux/sevices/features/brandsApi/brandsApi'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess'
+import { useGetCategoriesQuery } from '../../redux/sevices/features/categoriesApi/categoriesApi'
 
 const Footer = () => {
 	const [catalogVisible, setCatalogVisible] = useState(false)
 	const [brandsVisible, setBrandsVisible] = useState(false)
 
-	const { data = [] } = useGetBrandsQuery()
+	const { data: brand = [] } = useGetBrandsQuery()
+	const { data: categories = [] } = useGetCategoriesQuery()
+
+	let newCategories = categories.filter(item => item.parent === null)
 
 	return (
 		<div className={s.footer}>
@@ -18,8 +21,8 @@ const Footer = () => {
 				<div className={s.catalog}>
 					<h3>Каталог</h3>
 					<div className={s.catalog_items}>
-						{catalog.map(category =>
-							<NavLink to={`catalog/${category.id}`} key={category.id}>{category.name}</NavLink>)}
+						{newCategories.map(category =>
+							<NavLink to={`catalog/${category.id}`} key={category.id}>{category.title}</NavLink>)}
 					</div>
 				</div>
 				<div className={s.adaptive_catalog}>
@@ -29,15 +32,15 @@ const Footer = () => {
 					</div>
 					{catalogVisible &&
 						<div className={s.catalog_items}>
-							{catalog.map(category =>
-								<NavLink to={`catalog/${category.id}`} key={category.id}>{category.name}</NavLink>)}
+							{newCategories.map(category =>
+								<NavLink to={`catalog/${category.id}`} key={category.id}>{category.title}</NavLink>)}
 						</div>
 					}
 				</div>
 				<div className={s.brands}>
 					<h3>Бренды</h3>
 					<div className={s.brands_items}>
-						{data?.map(brand =>
+						{brand?.map(brand =>
 							<NavLink to={`brand/${brand.id}`} key={brand.id}>{brand.name}</NavLink>)}
 					</div>
 				</div>
@@ -48,7 +51,7 @@ const Footer = () => {
 					</div>
 					{brandsVisible &&
 						<div className={s.brands_items}>
-							{data?.map(brand =>
+							{brand?.map(brand =>
 								<NavLink to={`brand/${brand.id}`} key={brand.id}>{brand.name}</NavLink>)}
 						</div>
 					}

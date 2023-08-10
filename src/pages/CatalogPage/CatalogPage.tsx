@@ -1,9 +1,13 @@
 import React from 'react'
 import s from './CatalogPage.module.scss'
 import { NavLink } from 'react-router-dom'
-import { Items as Categories } from '../../assets/data/categoriesData'
+import { useGetCategoriesQuery } from '../../redux/sevices/features/categoriesApi/categoriesApi'
 
 const CatalogPage = () => {
+
+	const { data: categories = [] } = useGetCategoriesQuery()
+
+	let newCategories = categories.filter(item => item.parent === null)
 
 	return (
 		<div className={s.catalog}>
@@ -12,19 +16,19 @@ const CatalogPage = () => {
 				<div className={s.catalog_items}>
 					<div className={s.catalog_nav}>
 						<nav>
-							{Categories.map(category => (
+							{newCategories.map(category => (
 								<NavLink key={category.id}
 												 className={({ isActive, isPending }) => isPending ? s.pending : isActive ? s.active : ''}
 												 to={`category/${category.id}`}>
-									{category.name}
+									{category.title}
 								</NavLink>
 							))}
 						</nav>
 					</div>
 					<div className={s.categories}>
-						{Categories.map(item => <NavLink to={`category/${item.id}`} key={item.id} className={s.category}>
-							<div className={s.img_block}><img src={item.img} alt='' /></div>
-							<span>{item.name}</span>
+						{newCategories.map(item => <NavLink to={`category/${item.id}`} key={item.id} className={s.category}>
+							<div className={s.img_block}><img src={item.image} alt='' /></div>
+							<span>{item.title}</span>
 						</NavLink>)}
 					</div>
 				</div>

@@ -6,7 +6,7 @@ export const productsApi = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: 'http://192.168.100.24/api/' }),
 	endpoints: build => ({
 		getProduct: build.query<IProducts, number>({
-			query: (productId) => `products/${productId}`
+			query: (productId) => `products/${productId}/`
 		})
 	})
 })
