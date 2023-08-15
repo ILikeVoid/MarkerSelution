@@ -6,20 +6,23 @@ export type IBrands = {
 	description?: string
 }
 
+
+
 //Categories types.
+export type IParent = {
+	id?: number
+	title: string
+	slug?: string
+	image?: string
+}
+
 export type ICategories = {
 	id?: number
 	title: string
 	slug?: string
 	image?: string
-	lft?: number
-	rght?: number
-	tree_id?: number
-	level?: number
-	parent: number | null
 	products?: Array<number>
 	children?: Array<number>
-
 }
 
 

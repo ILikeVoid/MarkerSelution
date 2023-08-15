@@ -6,8 +6,9 @@ import Header from './components/Header/Header'
 import SolutionsPage from './pages/SolutionsPage/SolutionsPage'
 import ContactsPage from './pages/ContactsPage/ContactsPage'
 import CatalogPage from './pages/CatalogPage/CatalogPage'
-import BrandDetails from './pages/BrandDetailsPage/BrandDetailsPage'
+import BrandDetailsPage from './pages/BrandDetailsPage/BrandDetailsPage'
 import Footer from './components/Footer/Footer'
+import ParentDetailsPage from './pages/ParentDetailsPage/ParentDetailsPage'
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
 				<Route path='/solutions' element={<SolutionsPage />} />
 				<Route path='/contacts' element={<ContactsPage />} />
 				<Route path='/catalog' element={<CatalogPage />} />
-				<Route path='/brand/:brandId' element={<BrandDetails />} />
+				<Route path='/brand/:brandId' element={<BrandDetailsPage />} />
+				<Route path='/category/:childrenId' element={<ParentDetailsPage />} />
 			</Routes>
 			<Footer />
 		</div>
