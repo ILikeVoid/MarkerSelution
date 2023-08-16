@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  .category {
+    background-color: #f1f1f1;
+    height: 180px;
+    text-align: center;
+    padding: 10px;
+    transition: 0.3s all;
+
+    .img_block {
+      height: 120px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin: 0 auto;
+        width: 80px;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 20px silver;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1279px) {
+  .categories {
+    .category {
+      height: 200px;
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+  .categories {
+    .category {
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      gap: 10px;
+
+      .img_block {
+        height: 100px;
+
+        img {
+          width: 70px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .categories {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .categories {
+    gap: 10px;
+
+    .category {
+      height: 180px;
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 433px) {
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

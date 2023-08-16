@@ -9,7 +9,7 @@ export const categoriesApi = createApi({
 			query: () => 'api/parent-categories/'
 		}),
 		getParentChildren: build.query<ICategories[], number>({
-			query: (childrenId) => `/category/${childrenId}/children/`
+			query: (parentId) => `category/${parentId}/children/`
 		})
 	})
 })

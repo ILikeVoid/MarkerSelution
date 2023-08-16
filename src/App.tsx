@@ -5,10 +5,11 @@ import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header/Header'
 import SolutionsPage from './pages/SolutionsPage/SolutionsPage'
 import ContactsPage from './pages/ContactsPage/ContactsPage'
-import CatalogPage from './pages/CatalogPage/CatalogPage'
 import BrandDetailsPage from './pages/BrandDetailsPage/BrandDetailsPage'
 import Footer from './components/Footer/Footer'
-import ParentDetailsPage from './pages/ParentDetailsPage/ParentDetailsPage'
+import CatalogLayout from './components/CatalogLayout/CatalogLayout'
+import ParentCategories from './components/ParentCategories/ParentCategories'
+import ParentDetails from './components/ParentDetails/ParentDetails'
 
 
 function App() {
@@ -19,9 +20,11 @@ function App() {
 				<Route path='/' element={<HomePage />} />
 				<Route path='/solutions' element={<SolutionsPage />} />
 				<Route path='/contacts' element={<ContactsPage />} />
-				<Route path='/catalog' element={<CatalogPage />} />
+				<Route path='/catalog' element={<CatalogLayout />}>
+					<Route index element={<ParentCategories />} />
+					<Route path='parent/:parentId' element={<ParentDetails />} />
+				</Route>
 				<Route path='/brand/:brandId' element={<BrandDetailsPage />} />
-				<Route path='/category/:childrenId' element={<ParentDetailsPage />} />
 			</Routes>
 			<Footer />
 		</div>

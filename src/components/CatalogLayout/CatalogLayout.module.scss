@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+.catalog {
+  padding: 60px 0;
+  font-family: 'Fira Sans', sans-serif;
+
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .catalog_items {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 1295px) {
+  .catalog {
+    margin: 0 2%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .catalog {
+    .catalog_items {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .catalog {
+    h1 {
+      font-size: 32px;
+    }
+  }
+}
+
