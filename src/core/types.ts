@@ -33,6 +33,8 @@ export interface IDocumentation {
 	product: number
 }
 
+
+
 export interface ISchemes {
 	id: number
 	image: string

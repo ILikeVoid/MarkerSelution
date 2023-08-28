@@ -2,6 +2,7 @@ import React from 'react'
 import s from './ParentDetails.module.scss'
 import { useParams } from 'react-router-dom'
 import { useGetParentChildrenQuery } from '../../redux/sevices/features/categoriesApi/categoriesApi'
+import Products from '../Products/Products'
 
 const ParentDetails = () => {
 	const { parentId } = useParams()
@@ -19,6 +20,7 @@ const ParentDetails = () => {
 				</div>
 				)}
 			</div>
+			<Products parentId={Number(parentId)}/>
 		</div>
 	)
 }

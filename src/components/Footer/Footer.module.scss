@@ -53,6 +53,7 @@
     }
 
     .any {
+      gap: 10px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       font-size: 12px;
@@ -78,7 +79,6 @@
     .footer_items {
       .any {
         justify-content: space-between;
-        gap: 10px;
         font-size: 10px;
       }
     }
@@ -87,6 +87,7 @@
 
 @media screen and (max-width: 772px){
   .footer {
+    padding: 0 2%;
     .footer_items {
       gap: 0;
 
