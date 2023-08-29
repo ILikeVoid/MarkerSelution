@@ -1,4 +1,5 @@
 .loading {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
 
@@ -7,13 +8,13 @@
   }
 }
 
-.parent {
-  .parent_items {
+.child {
+  .child_items {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
 
-    .child {
+    .child_category {
       max-height: 300px !important;
       border: 1px solid #dddddd;
       background-color: #f1f1f1;
@@ -48,9 +49,9 @@
 }
 
 @media screen and (max-width: 1400px) {
-  .parent {
-    .parent_items {
-      .child {
+  .child {
+    .child_items {
+      .child_category {
         p {
           font-size: 14px;
         }
@@ -60,8 +61,8 @@
 }
 
 @media screen and (max-width: 1279px) {
-  .parent {
-    .parent_items {
+  .child {
+    .child_items {
       display: grid;
       grid-template-columns: repeat(4, 1fr)
     }
@@ -81,8 +82,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .parent {
-    .parent_items {
+  .child {
+    .child_items {
       display: grid;
       grid-template-columns: repeat(3, 1fr)
     }
@@ -90,11 +91,11 @@
 }
 
 @media screen and (max-width: 632px) {
-  .parent {
-    .parent_items {
+  .child {
+    .child_items {
       gap: 10px;
 
-      .child {
+      .child_category {
         max-height: 200px;
 
         .img_block {
@@ -112,12 +113,12 @@
 
 
 @media screen and (max-width: 488px) {
-  .parent {
-    .parent_items {
+  .child {
+    .child_items {
       grid-template-columns: repeat(4, 1fr);
       gap: 5px;
 
-      .child {
+      .child_category {
         border: 0.5px solid #dddddd;
 
         .img_block {
@@ -137,8 +138,8 @@
 }
 
 @media screen and (max-width: 374px) {
-  .parent {
-    .parent_items {
+  .child {
+    .child_items {
       grid-template-columns: repeat(3, 1fr);
     }
   }

@@ -1,19 +1,20 @@
 import s from './Products.module.scss'
-import { FC } from 'react'
-import { useGetCategoryProductsQuery } from '../../redux/sevices/features/categoriesApi/categoriesApi'
+import React, { FC } from 'react'
+import { ICategoryProducts } from '../../core/types'
 
-type IProducts = {
-	parentId: number
-}
 
-const Products: FC<IProducts> = ({ parentId }) => {
+const Products: FC<ICategoryProducts> = ({ next, results, count, previous }) => {
 
-	const { data } = useGetCategoryProductsQuery(parentId)
-
-	console.log(data)
 
 	return (
-		<div className={s.products}>Products</div>
+		<div className={s.products}>
+			{results?.map(result =>
+				<div key={result.id} className={s.product}>
+					<div className={s.img_block}><img src={`http://192.168.100.24/${result.photo}`} alt='' /></div>
+					<p>{result.title}</p>
+					<button>Заказать</button>
+				</div>)}
+		</div>
 	)
 }
 

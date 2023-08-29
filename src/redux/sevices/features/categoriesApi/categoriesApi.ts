@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ICategories, IParent, IProducts } from '../../../../core/types'
+import { ICategories, ICategoryProducts, IParent, IProducts } from '../../../../core/types'
 
 export const categoriesApi = createApi({
 	reducerPath: 'categoriesApi',
@@ -11,7 +11,7 @@ export const categoriesApi = createApi({
 		getParentChildren: build.query<ICategories[], number>({
 			query: (parentId) => `category/${parentId}/children/`
 		}),
-		getCategoryProducts: build.query<IProducts[], number>({
+		getCategoryProducts: build.query<ICategoryProducts, number>({
 			query: (categoryId) => `category/${categoryId}/products/`
 		})
 	})

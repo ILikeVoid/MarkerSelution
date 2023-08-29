@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer'
 import CatalogLayout from './components/CatalogLayout/CatalogLayout'
 import ParentCategories from './components/ParentCategories/ParentCategories'
 import ParentDetails from './components/ParentDetails/ParentDetails'
+import ChildrenDetails from './components/ChildrenDetails/ChildrenDetails'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
 				<Route path='/catalog' element={<CatalogLayout />}>
 					<Route index element={<ParentCategories />} />
 					<Route path='parent/:parentId' element={<ParentDetails />} />
+					<Route path='parent/:parentId/child/:childId' element={<ChildrenDetails/>}/>
 				</Route>
 				<Route path='/brand/:brandId' element={<BrandDetailsPage />} />
 			</Routes>
