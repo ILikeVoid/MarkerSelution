@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+.parent_list {
+  padding: 40px 0;
+
+  .parent_list_items {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border: 1px dashed #cbcbcb;
+
+    .parent {
+      height: 250px;
+      padding: 10px 20px;
+      border-bottom: 1px dashed #cbcbcb;
+      border-right: 1px dashed #cbcbcb;
+
+      .img_block {
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100px;
+        }
+      }
+
+      .items {
+        p {
+          text-align: center;
+          font-family: 'Fira Sans', sans-serif;
+        }
+      }
+    }
+  }
+}
