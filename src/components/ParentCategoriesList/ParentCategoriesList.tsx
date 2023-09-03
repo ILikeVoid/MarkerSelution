@@ -10,8 +10,9 @@ const ParentCategoriesList = () => {
 	return (
 		<div className={s.parent_list}>
 			<div className='container mx-auto'>
+				<h2>Разделы товаров</h2>
 				<div className={s.parent_list_items}>
-					{parents.map(parent => <NavLink to={`parent/${parent.id}`} className={s.parent}>
+					{parents.map(parent => <NavLink key={parent.id} to={`catalog/parent/${parent.id}`} className={s.parent}>
 						<div className={s.img_block}><img src={`http://192.168.100.24/${parent.image}`} alt='' /></div>
 						<div className={s.items}><p>{parent.title}</p></div>
 					</NavLink>)}

@@ -3,6 +3,7 @@ import s from './HomePage.module.scss'
 import BrandsCarousel from '../../components/BrandsCarousel/BrandsCarousel'
 import Title from '../../components/Title/Title'
 import ParentCategoriesList from '../../components/ParentCategoriesList/ParentCategoriesList'
+import AdvantagesList from '../../components/AdvantagesList/AdvantagesList'
 
 const HomePage = () => {
 	return (
@@ -10,6 +11,7 @@ const HomePage = () => {
 			<Title />
 			<BrandsCarousel />
 			<ParentCategoriesList/>
+			<AdvantagesList />
 		</div>
 	)
 }

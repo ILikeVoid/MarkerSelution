@@ -31,7 +31,7 @@ const ParentDetails = () => {
 					)}
 				</div>
 				<PagePagination />
-				<Products {...categoryProducts} />
+				<Products childProducts={categoryProducts} childCategories={children}/>
 			</div>
 		)
 	}

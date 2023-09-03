@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
 .parent_list {
-  padding: 40px 0;
+  margin-bottom: 100px;
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
 
   .parent_list_items {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     border: 1px dashed #cbcbcb;
 
     .parent {
@@ -27,8 +33,119 @@
 
       .items {
         p {
+          margin-top: 5px;
           text-align: center;
           font-family: 'Fira Sans', sans-serif;
+          font-size: 14px;
+        }
+      }
+
+      &:hover {
+        p {
+          color: #6589eb;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .parent_list {
+    .parent_list_items {
+      grid-template-columns: repeat(6, 1fr);
+
+      .parent {
+        height: 220px;
+
+        .items {
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .parent_list {
+    .parent_list_items {
+      grid-template-columns: repeat(5, 1fr);
+
+      .parent {
+        .img_block {
+          height: 130px;
+
+          img {
+            width: 90px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .parent_list {
+    .parent_list_items {
+      grid-template-columns: repeat(6, 1fr);
+
+      .parent {
+        height: 120px;
+        padding: 0 5px;
+
+        .img_block {
+          height: 80px;
+
+          img {
+            width: 40px;
+          }
+        }
+
+        .items {
+          p {
+            margin-top: 0;
+            font-size: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .parent_list {
+    h2 {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 574px) {
+  .parent_list {
+    margin-bottom: 50px;
+
+    .parent_list_items {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 483px) {
+  .parent_list {
+    .parent_list_items {
+      grid-template-columns: repeat(3, 1fr);
+
+      .parent {
+        height: 100px;
+
+        .img_block {
+          height: 60px;
+
+          img {
+            width: 35px;
+          }
         }
       }
     }

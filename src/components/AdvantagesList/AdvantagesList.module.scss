@@ -1,0 +1,32 @@
+.advantages {
+  background: #6589eb;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 50px 30px;
+  color: white;
+  margin-bottom: 40px;
+
+  .cart {
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px dotted white;
+    box-shadow: 5px 5px 5px #51514E;
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .advantages {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 483px){
+  .advantages {
+    .cart {
+      padding: 20px 10px;
+      font-size: 15px;
+    }
+  }
+}

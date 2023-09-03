@@ -11,6 +11,8 @@ import CatalogLayout from './components/CatalogLayout/CatalogLayout'
 import ParentCategories from './components/ParentCategories/ParentCategories'
 import ParentDetails from './components/ParentDetails/ParentDetails'
 import ChildrenDetails from './components/ChildrenDetails/ChildrenDetails'
+import ProductDetails from './components/ProductDetails/ProductDetails'
+import DeepChildDetails from './components/DeepChildDetails/DeepChildDetails'
 
 
 function App() {
@@ -24,8 +26,10 @@ function App() {
 				<Route path='/catalog' element={<CatalogLayout />}>
 					<Route index element={<ParentCategories />} />
 					<Route path='parent/:parentId' element={<ParentDetails />} />
-					<Route path='parent/:parentId/child/:childId' element={<ChildrenDetails/>}/>
+					<Route path='parent/:parentId/child/:childId' element={<ChildrenDetails />} />
+					<Route path='parent/:parentId/child/:childId/deep-child/:childId' element={<DeepChildDetails />} />
 				</Route>
+				<Route path='product/:productId' element={<ProductDetails />} />
 				<Route path='/brand/:brandId' element={<BrandDetailsPage />} />
 			</Routes>
 			<Footer />

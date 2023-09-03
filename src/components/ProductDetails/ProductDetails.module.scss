@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+.product {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: 'Fira Sans', sans-serif;
+
+  h2 {
+    font-size: 32px;
+  }
+
+  .product_items {
+    display: flex;
+    border-top: 1px #dcdcdc solid;
+    padding-top: 20px;
+    justify-content: space-between;
+
+    .product_images {
+      width: 35%;
+      border: 1px solid #cbcbcb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 300px;
+      }
+    }
+
+    .product_info {
+      p {
+        color: #999999;
+        font-size: 18px;
+        font-weight: 500;
+
+        a {
+          color: #6589eb;
+          text-decoration: underline;
+        }
+      }
+
+      .data {
+        color: black;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    .price {
+      width: 400px;
+
+      .product_price {
+        background-color: #F5F5F5;
+        padding: 20px 20px;
+        font-family: 'Open Sans', sans-serif;
+
+        p {
+          font-size: 30px;
+          font-weight: bold;
+        }
+
+        .nds {
+          color: #999999;
+        }
+
+        a {
+          cursor: pointer;
+          font-size: 18px;
+          margin-top: 20px;
+          border: 1px solid #29a90c !important;
+          font-weight: bold;
+          color: white;
+          height: 50px;
+          width: 140px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #22a90b;
+        }
+      }
+
+      .any_info {
+        font-family: 'Open Sans', sans-serif;
+
+        .col {
+          margin-top: 20px;
+          display: flex;
+          gap: 10px;
+        }
+
+        span {
+          font-weight: bold;
+          color: #6589eb;
+        }
+
+        p {
+          font-size: 14px;
+          color: #999999;
+        }
+
+        a {
+          font-size: 14px;
+          text-decoration: underline;
+        }
+
+        .sum {
+          color: #6589eb;
+        }
+      }
+    }
+  }
+}

@@ -60,10 +60,11 @@ export interface IProducts {
 	article: string
 	code: string
 	description?: string
-	characteristics?: string
+	characteristics?: any
 	category: number
 	brand: number
 	photo?: string
+	price?: number
 	documentation?: IDocumentation[]
 	schemes?: ISchemes[]
 	images?: IImages[]

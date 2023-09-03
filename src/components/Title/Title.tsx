@@ -1,7 +1,10 @@
 import React from 'react'
 import s from './Title.module.scss'
+import { useNavigate } from 'react-router-dom'
 
 const Title = () => {
+	const navigate = useNavigate()
+
 	return (
 		<section className={s.title}>
 			<video
@@ -23,7 +26,7 @@ const Title = () => {
 						<br />
 						Werkzeugen, Messmitteln und mehr.
 					</p>
-					<div className={s.title_button}><button>Заказать</button></div>
+					<div className={s.title_button}><a href="https://wa.me/+77021117118" target="_blank">Заказать</a></div>
 				</div>
 			</div>
 		</section>

@@ -1,0 +1,26 @@
+.characteristic {
+  margin-top: 15px;
+  padding: 0 5px;
+
+  ul {
+    font-size: 11.5px;
+
+    .characteristic_items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px silver solid;
+      gap: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 497px){
+  .characteristic {
+    height: 240px!important;
+
+    ul {
+      font-size: 9px;
+    }
+  }
+}
