@@ -9,12 +9,12 @@ const BrandDetailsPage = () => {
 
 	const { data } = useGetBrandDetailsQuery(Number(brandId))
 
-	console.log(data)
+	console.log(typeof brandId)
 
 	return (
 		<div className={s.dd}>
 			<div className='container mx-auto'>
-				{data && <BrandDetails id={data.id} name={data.name} image={data.image} />}
+				{data && brandId && <BrandDetails brandId={brandId} brand={data} />}
 			</div>
 		</div>
 	)

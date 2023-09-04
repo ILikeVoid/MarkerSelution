@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IBrands } from '../../../../core/types'
+import { IBrands, IProducts } from '../../../../core/types'
 
 export const brandsApi = createApi({
 	reducerPath: 'brandsApi',
@@ -10,6 +10,9 @@ export const brandsApi = createApi({
 		}),
 		getBrandDetails: build.query<IBrands, number>({
 			query: (brandId) => `brands/${brandId}/`
+		}),
+		getBrandProducts: build.query<IProducts[], number>({
+			query: (brandId) => `api/products/by-brand/${brandId}/`
 		})
 	})
 })

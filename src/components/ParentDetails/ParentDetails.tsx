@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './ParentDetails.module.scss'
 import { NavLink, useParams } from 'react-router-dom'
 import {
@@ -11,12 +11,13 @@ import PagePagination from '../PagePagination/PagePagination'
 
 const ParentDetails = () => {
 	const { parentId } = useParams()
+	const [currentPage, setCurrentPage] = useState(1)
 
 	const { data: children = [], isLoading: childLoading } = useGetParentChildrenQuery(Number(parentId))
-	const { data: categoryProducts, isLoading: categoryProductsLoading } = useGetCategoryProductsQuery(Number(parentId))
-
-	console.log(children)
-	console.log(categoryProducts)
+	const {
+		data: categoryProducts,
+		isLoading: categoryProductsLoading
+	} = useGetCategoryProductsQuery({ categoryId: Number(parentId), currentPage: currentPage })
 
 	if (childLoading || categoryProductsLoading) {
 		return <div className={s.loading}><img src={loading} alt='Loading' /></div>
@@ -30,8 +31,8 @@ const ParentDetails = () => {
 						</NavLink>
 					)}
 				</div>
-				<PagePagination />
-				<Products childProducts={categoryProducts} childCategories={children}/>
+				<Products childProducts={categoryProducts} childCategories={children} currentPage={currentPage}
+									setCurrentPage={setCurrentPage} />
 			</div>
 		)
 	}

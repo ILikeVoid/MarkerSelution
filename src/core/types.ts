@@ -6,8 +6,6 @@ export type IBrands = {
 	description?: string
 }
 
-
-
 //Categories types.
 export type IParent = {
 	id?: number
@@ -53,7 +51,7 @@ export interface IImages {
 	images: string
 }
 
-export interface IProducts {
+export type IProducts = {
 	id?: number
 	title: string
 	slug?: string

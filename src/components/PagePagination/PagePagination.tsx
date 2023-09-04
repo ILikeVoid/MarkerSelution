@@ -1,12 +1,22 @@
-import React from 'react'
-import s from "./PagePagination.module.scss"
+import React, { FC } from 'react'
+import s from './PagePagination.module.scss'
+import { Pagination } from '@mui/material'
 
-const PagePagination = () => {
+type PaginationProps = {
+	currentPage: number;
+	totalPages: number;
+	setCurrentPage: Function
+}
+
+const PagePagination: FC<PaginationProps> = ({ currentPage, totalPages, setCurrentPage }) => {
+
+
 
 	return (
-		<div className={s.pagination}>
-			<span></span>
-		</div>
+		<>
+			<p>Страница {currentPage} из {totalPages}</p>
+
+		</>
 	)
 }
 

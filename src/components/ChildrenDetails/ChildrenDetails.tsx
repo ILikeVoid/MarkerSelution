@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './ChildrenDetails.module.scss'
 import { NavLink, useParams } from 'react-router-dom'
 import {
@@ -11,8 +11,9 @@ import Products from '../Products/Products'
 
 const ChildrenDetails = () => {
 	const { childId } = useParams()
+	const [currentPage, setCurrentPage] = useState(1)
 
-	const { data: childProducts, isLoading: childLoading } = useGetCategoryProductsQuery(Number(childId))
+	const { data: childProducts, isLoading: childLoading } = useGetCategoryProductsQuery({categoryId: Number(childId), currentPage: currentPage})
 	const { data: childCategories, isLoading: childCategoriesLoading } = useGetParentChildrenQuery(Number(childId))
 
 	console.log(childProducts?.results)
@@ -29,8 +30,7 @@ const ChildrenDetails = () => {
 						</NavLink>
 					)}
 				</div>
-				<PagePagination />
-				<Products childProducts={childProducts} childCategories={childCategories}/>
+				<Products childProducts={childProducts} childCategories={childCategories} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
 			</div>
 		)
 	}

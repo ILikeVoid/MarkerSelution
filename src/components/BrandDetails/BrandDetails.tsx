@@ -3,15 +3,21 @@ import { IBrands } from '../../core/types'
 import s from './BrandDetails.module.scss'
 import { lipProducts } from '../../assets/data/lip-products'
 
+type IPropsBrand = {
+	brandId: string
+	brand: IBrands
+}
 
-const BrandDetails: FC<IBrands> = ({ id, name, image }) => {
+
+const BrandDetails: FC<IPropsBrand> = ({brandId, brand}) => {
+
 
 	return (
-		<div key={id} className={s.brand}>
-			<h1>{name}</h1>
+		<div key={brand.id} className={s.brand}>
+			<h1>{brand.name}</h1>
 			<div className={s.brand_items}>
-				<img src={image} alt='' />
-				<p>Официальный дилер {name} в Казахстане</p>
+				<img src={brand.image} alt='' />
+				<p>Официальный дилер {brand.name} в Казахстане</p>
 			</div>
 			<div className={s.brand_products}>
 				{lipProducts.map(product =>
