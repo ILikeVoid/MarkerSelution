@@ -1,147 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
 .brand {
-	margin: 60px 0;
+  margin: 60px 0;
+  font-family: 'Fira Sans', sans-serif;
 
-	h1 {
-		font-size: 40px;
-		font-weight: bold;
-		font-family: 'Fira Sans', sans-serif;
-	}
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Fira Sans', sans-serif;
+  }
 
-	.brand_items {
-		background-color: #f1f1f1;
-		padding: 20px 20px;
+  .brand_items {
+    background-color: #f1f1f1;
+    padding: 20px 20px;
 
-		p {
-			font-family: 'Fira Sans', sans-serif;
-		}
-	}
+    p {
+      margin-top: 15px;
+      font-family: 'Fira Sans', sans-serif;
+    }
+  }
 
-	.brand_products {
-		margin-top: 40px;
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		border: 2px solid #efeeee;
+  .brand_products {
+    margin-top: 40px;
 
-		> div {
-			border-bottom: 2px #efeeee solid;
-		}
-
-		> div:last-child {
-			border-bottom: none;
-		}
-
-		.product {
-			padding: 20px 20px;
-			transition: 0.3s;
-
-			&:hover {
-				box-shadow: 0 0 20px silver;
-			}
-
-			.product_items {
-				display: flex;
-				flex-direction: column;
-
-				.image_block {
-					padding: 40px 40px;
-				}
-
-				span {
-					font-family: 'Fira Sans', sans-serif;
-				}
-
-				button {
-					margin-top: 20px;
-					background-color: gray;
-					color: white;
-					font-size: 20px;
-					padding: 5px 10px;
-					transition: 0.3s all;
-
-					&:hover {
-						background-color: #6589eb;
-					}
-				}
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 1279px) {
-	.brand {
-		.brand_products {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-		}
-	}
-}
-
-@media screen and (max-width: 1023px) {
-	.brand {
-		.brand_products {
-			.product {
-				.product_items {
-					span {
-						font-size: 14px;
-					}
-
-					.image_block {
-						padding: 20px 20px;
-					}
-
-					button {
-						font-size: 16px;
-						padding: 5px 5px;
-					}
-				}
-			}
-		}
-	}
+    h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
-	.brand {
-		padding: 0 2%;
-		h1 {
-			font-size: 32px;
-		}
-		.brand_products {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-}
+  .brand {
+    padding: 0 2%;
 
-@media screen and (max-width: 555px) {
-	.brand {
-		.brand_products {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
+    h1 {
+      font-size: 32px;
+    }
+
+    .brand_products {
+      h2 {
+        font-size: 26px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 387px) {
-	.brand {
-		.brand_items {
-			p {
-				font-size: 14px;
-			}
-		}
-		.brand_products {
-			.product {
-				.product_items {
-					.image_block {
-						padding: 0 0;
-					}
+  .brand {
+    .brand_items {
+      p {
+        font-size: 14px;
+      }
+    }
 
-					span {
-						margin-top: 15px;
-						font-size: 10px;
-					}
-				}
-			}
-		}
-	}
+    .brand_products {
+      h2 {
+        font-size: 22px;
+      }
+    }
+  }
 }

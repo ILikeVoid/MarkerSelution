@@ -19,7 +19,7 @@ const DeepChildDetails = () => {
 	if (childProductsLoading) {
 		return <div className={s.loading}><img src={loading} alt='Loading' /></div>
 	} else {
-		return <Products childProducts={deep_child_products} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+		return <Products products={deep_child_products} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
 	}
 }
 

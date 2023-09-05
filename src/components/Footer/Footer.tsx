@@ -13,6 +13,13 @@ const Footer = () => {
 	const { data: brands = [] } = useGetBrandsQuery()
 	const { data: parents = [] } = useGetParentQuery()
 
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		})
+	}
+
 	return (
 		<div className={s.footer}>
 			<div className={`container mx-auto ${s.footer_items}`}>
@@ -20,7 +27,7 @@ const Footer = () => {
 					<h3>Каталог</h3>
 					<div className={s.catalog_items}>
 						{parents.map(parent =>
-							<NavLink to={`catalog/${parent.id}`} key={parent.id}>{parent.title}</NavLink>)}
+							<NavLink onClick={scrollToTop} to={`catalog/parent/${parent.id}`} key={parent.id}>{parent.title}</NavLink>)}
 					</div>
 				</div>
 				<div className={s.adaptive_catalog}>
@@ -31,7 +38,7 @@ const Footer = () => {
 					{catalogVisible &&
 						<div className={s.catalog_items}>
 							{parents.map(parent =>
-								<NavLink to={`catalog/${parent.id}`} key={parent.id}>{parent.title}</NavLink>)}
+								<NavLink onClick={scrollToTop} to={`catalog/${parent.id}`} key={parent.id}>{parent.title}</NavLink>)}
 						</div>
 					}
 				</div>
@@ -39,7 +46,7 @@ const Footer = () => {
 					<h3>Бренды</h3>
 					<div className={s.brands_items}>
 						{brands?.map(brand =>
-							<NavLink to={`brand/${brand.id}`} key={brand.id}>{brand.name}</NavLink>)}
+							<NavLink onClick={scrollToTop} to={`brand/${brand.id}`} key={brand.id}>{brand.name}</NavLink>)}
 					</div>
 				</div>
 				<div className={s.adaptive_brands}>
@@ -50,7 +57,7 @@ const Footer = () => {
 					{brandsVisible &&
 						<div className={s.brands_items}>
 							{brands?.map(brand =>
-								<NavLink to={`brand/${brand.id}`} key={brand.id}>{brand.name}</NavLink>)}
+								<NavLink onClick={scrollToTop} to={`brand/${brand.id}`} key={brand.id}>{brand.name}</NavLink>)}
 						</div>
 					}
 				</div>

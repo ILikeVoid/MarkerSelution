@@ -6,7 +6,6 @@ import {
 	useGetParentChildrenQuery
 } from '../../redux/sevices/features/categoriesApi/categoriesApi'
 import loading from '../../assets/images/loading.svg'
-import PagePagination from '../PagePagination/PagePagination'
 import Products from '../Products/Products'
 
 const ChildrenDetails = () => {
@@ -30,7 +29,7 @@ const ChildrenDetails = () => {
 						</NavLink>
 					)}
 				</div>
-				<Products childProducts={childProducts} childCategories={childCategories} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+				<Products products={childProducts} childCategories={childCategories} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
 			</div>
 		)
 	}

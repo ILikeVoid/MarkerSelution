@@ -1,7 +1,8 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { IBrands } from '../../core/types'
 import s from './BrandDetails.module.scss'
-import { lipProducts } from '../../assets/data/lip-products'
+import { useGetBrandProductsQuery } from '../../redux/sevices/features/brandsApi/brandsApi'
+import Products from '../Products/Products'
 
 type IPropsBrand = {
 	brandId: string
@@ -9,8 +10,10 @@ type IPropsBrand = {
 }
 
 
-const BrandDetails: FC<IPropsBrand> = ({brandId, brand}) => {
+const BrandDetails: FC<IPropsBrand> = ({ brandId, brand }) => {
+	const [currentPage, setCurrentPage] = useState(1)
 
+	const { data: brandProducts } = useGetBrandProductsQuery({ brandId: Number(brandId), currentPage: currentPage })
 
 	return (
 		<div key={brand.id} className={s.brand}>
@@ -20,17 +23,8 @@ const BrandDetails: FC<IPropsBrand> = ({brandId, brand}) => {
 				<p>Официальный дилер {brand.name} в Казахстане</p>
 			</div>
 			<div className={s.brand_products}>
-				{lipProducts.map(product =>
-					<div key={product.id} className={s.product}>
-						<div className={s.product_items}>
-							<div className={s.image_block}>
-								<img src={product.image} alt='' />
-							</div>
-							<span>{product.name}</span>
-							<button>Заказать</button>
-						</div>
-					</div>
-				)}
+				<h2>Товары бренда {brand.name}</h2>
+				<Products products={brandProducts} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
 			</div>
 		</div>
 	)

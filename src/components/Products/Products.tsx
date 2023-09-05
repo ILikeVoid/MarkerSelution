@@ -3,20 +3,19 @@ import React, { FC, useEffect, useState } from 'react'
 import { ICategories, ICategoryProducts } from '../../core/types'
 import { NavLink } from 'react-router-dom'
 import CharacteristicList from '../CharacteristicList/CharacteristicList'
-import PagePagination from '../PagePagination/PagePagination'
 import { Pagination } from '@mui/material'
 
 type IProps = {
-	childProducts?: ICategoryProducts
+	products?: ICategoryProducts
 	childCategories?: ICategories[],
 	currentPage: number
 	setCurrentPage: Function
 }
 
-const Products: FC<IProps> = ({ childProducts, childCategories, currentPage, setCurrentPage }) => {
+const Products: FC<IProps> = ({ products, childCategories, currentPage, setCurrentPage }) => {
 	const [childCategoriesAvailable, setChildCategoriesAvailable] = useState(true)
 
-	let totalPages = Math.ceil(Number(childProducts?.count) / 50)
+	let totalPages = Math.ceil(Number(products?.count) / 50)
 
 	useEffect(() => {
 		if (childCategories?.length === 0 || childCategories === undefined) {
@@ -30,6 +29,8 @@ const Products: FC<IProps> = ({ childProducts, childCategories, currentPage, set
 		setCurrentPage(p)
 	}
 
+	console.log(products)
+
 	const scrollToTop = () => {
 		window.scrollTo({
 			top: 0,
@@ -37,7 +38,7 @@ const Products: FC<IProps> = ({ childProducts, childCategories, currentPage, set
 		})
 	}
 
-	if (childProducts?.results?.length === 0) {
+	if (products?.results?.length === 0) {
 		return <div className={s.no_product_text}>Нет товаров</div>
 	} else {
 		return (
@@ -45,7 +46,7 @@ const Products: FC<IProps> = ({ childProducts, childCategories, currentPage, set
 				<span>Страница {currentPage} из {totalPages}</span>
 				<Pagination count={totalPages} variant='outlined' shape='rounded' onChange={handlePageChange} />
 				<div className={s.products}>
-					{childProducts?.results?.map(result =>
+					{products?.results?.map(result =>
 						<NavLink to={`/product/${result.id}`} key={result.id} className={s.product} onClick={scrollToTop}>
 							<div className={s.product_items}>
 								<div className={s.img_block}><img src={`http://192.168.100.24/${result.photo}`} alt='' /></div>

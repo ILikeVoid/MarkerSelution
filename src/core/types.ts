@@ -30,6 +30,13 @@ export type ICategoryProducts = {
 	results?: IProducts[]
 }
 
+export type IBrandProducts = {
+	count?: number
+	next?: string | null
+	previous?: string | null
+	results?: IProducts[]
+}
+
 
 //Product types.
 export interface IDocumentation {
